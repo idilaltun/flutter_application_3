@@ -1,9 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_3/components/myflights.dart';
 import 'package:flutter_application_3/components/mytextfield.dart';
 import 'package:flutter_application_3/components/squaretile.dart';
-
+import 'package:http/http.dart' as http;
 import 'components/mybutton.dart';
+import 'dart:convert';
 
 void main() {
   runApp(MyApp());
@@ -28,11 +30,16 @@ class LoginPage extends StatelessWidget {
    final usernameController = TextEditingController();
    final passwordController = TextEditingController();
   // sign user in method
-  void signUserIn() {}
+  void signUserIn(BuildContext context) {
+    Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => MyFlights()), // Navigate to the new page
+  );
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.tealAccent,
+      backgroundColor: Colors.blue,
       body: SafeArea(
         child: Center(
           child: Column(
@@ -79,7 +86,7 @@ class LoginPage extends StatelessWidget {
 
               // sign in button
                MyButton(
-                onTap: signUserIn,
+                onTap: (context) => signUserIn(context),
               ),
               //or continue with 
               const SizedBox(height: 20),
@@ -120,7 +127,6 @@ class LoginPage extends StatelessWidget {
                   SquareTile(imagePath: 'lib/images/googlelogo.png'),
 
                   SizedBox(width: 25),
-
                   // apple button
                   SquareTile(imagePath: 'lib/images/applelogo.png')
                 ],

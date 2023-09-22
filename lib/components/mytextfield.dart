@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
-  final controller;
+  //final controller;
   final String hintText;
   final bool obscureText;
+  final TextEditingController controller;
 
   const MyTextField({
     super.key,
