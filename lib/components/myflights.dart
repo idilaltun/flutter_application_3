@@ -117,6 +117,7 @@ class _AeroDataBoxDataState extends State<AeroDataBoxData> {
           },
           child: Text('Search'),
         ),
+        //changed version
         Expanded(
           flex: 2,
           child: ListView.builder(
@@ -164,16 +165,7 @@ class _AeroDataBoxDataState extends State<AeroDataBoxData> {
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.example.app',
               ),
-           MarkerLayer(
-  markers: [
-    Marker(
-      point: LatLng(0, 0),
-      width: 20,
-      height: 20,
-      builder: (context) => FlutterLogo(),
-    ),
-  ],
-),
+ 
             ],
             
           ),
